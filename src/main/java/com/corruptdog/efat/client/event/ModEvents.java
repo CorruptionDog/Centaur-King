@@ -1,9 +1,9 @@
 package com.corruptdog.efat.client.event;
 
 
+import com.corruptdog.efat.entity.UnHumanMobEntitys;
 import com.corruptdog.efat.entity.type.CentaurKing;
 import com.corruptdog.efat.gameassets.UnHumanMobArmatures;
-import com.corruptdog.efat.entity.UnHumanMobEntitys;
 import com.corruptdog.efat.world.capabilities.entitypatch.boss.CentaurKingPatch;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -16,7 +16,15 @@ public class ModEvents {
 
     @SubscribeEvent
     public static void setPatch(EntityPatchRegistryEvent event) {
-        event.getTypeEntry().put(UnHumanMobEntitys.CENTAURKING.get(),(entity -> CentaurKingPatch::new));
+        event.getTypeEntry().put(UnHumanMobEntitys.CENTAURKING.get(), (entity ->
+        {
+            {
+                if (entity instanceof CentaurKing) {
+                    return CentaurKingPatch::new;
+                }
+                return () -> null;
+            }
+        }));
     }
 
 

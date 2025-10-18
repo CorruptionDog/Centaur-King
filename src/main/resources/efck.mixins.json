@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.corruptdog.efat.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "efck.refmap.json",
+  "mixins": [
+    "OBBColliderMixin"
+  ],
+  "client": [
+    "EntityRenderDispatcherMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

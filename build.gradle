@@ -5,6 +5,7 @@ plugins {
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
     id 'org.spongepowered.mixin' version '0.7.+'
 }
+apply plugin: 'org.spongepowered.mixin'
 
 version = mod_version
 group = mod_group_id
@@ -65,6 +66,12 @@ minecraft {
     }
 }
 
+mixin {
+    add sourceSets.main, "${mod_id}.refmap.json"
+
+    config "${mod_id}.mixins.json"
+}
+
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
@@ -86,6 +93,8 @@ dependencies {
     implementation fg.deobf("curse.maven:embeddium-908741:5556138")
     implementation fg.deobf("curse.maven:skinrestorer-443823:6015917")
 }
+
+
 
 tasks.named('processResources', ProcessResources).configure {
     var replaceProperties = [
