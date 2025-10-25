@@ -43,7 +43,9 @@ public class CentaurKingPatch extends MobPatch<CentaurKing> {
     public void initAnimator(Animator animator) {
         super.initAnimator(animator);
         animator.addLivingAnimation(LivingMotions.IDLE, UnHumanMobAnimations.CENTAURKING_IDLE);
-        animator.addLivingAnimation(LivingMotions.DEATH, Animations.BIPED_DEATH);
+		animator.addLivingAnimation(LivingMotions.RUN, UnHumanMobAnimations.CENTAURKING_RUN);
+		animator.addLivingAnimation(LivingMotions.WALK, UnHumanMobAnimations.CENTAURKING_WALK);
+		animator.addLivingAnimation(LivingMotions.DEATH, UnHumanMobAnimations.CENTAURKING_DEATH);
     }
 
     @Override

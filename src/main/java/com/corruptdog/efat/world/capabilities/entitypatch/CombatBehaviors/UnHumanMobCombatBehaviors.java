@@ -10,7 +10,7 @@ public class UnHumanMobCombatBehaviors {
     public static final CombatBehaviors.Builder<CentaurKingPatch> CENTAURKING = CombatBehaviors.<CentaurKingPatch>builder()
                  .newBehaviorSeries(
                     CombatBehaviors.BehaviorSeries.<CentaurKingPatch>builder().weight(100.0F).canBeInterrupted(true).looping(false)
-                           .nextBehavior(CombatBehaviors.Behavior.<CentaurKingPatch>builder().animationBehavior(UnHumanMobAnimations.CENTAURKING_ATTACK1).withinEyeHeight().withinDistance(0.0D, 2.0D))) ;
+                           .nextBehavior(CombatBehaviors.Behavior.<CentaurKingPatch>builder().animationBehavior(UnHumanMobAnimations.CENTAURKING_ATTACK_A).withinEyeHeight().withinDistance(0.0D, 2.0D))) ;
 
 
 }
